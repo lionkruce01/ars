@@ -1,0 +1,75 @@
+:root {
+    --html-bg: #171b25;
+    --font-fg: #ebecf7;
+    --fg: #ebecf7;
+
+    --search-bg: #0c0d0f;
+    --search-bg-input: #2e3443;
+    --search-bg-input-border: rgb(46, 52, 67);
+    --search-select: #3a445c;
+
+    --border: rgb(46, 52, 67);
+
+    --link: #a7b1fc;
+    --link-visited: #ad71bc;
+
+    --snip-border: rgb(46, 52, 67);
+    --snip-background: #1e222d;
+    --snip-text: #f1f3f4;
+
+    --settings-border: #5f6368;
+    --button: #0c0d0f;
+
+    --footer-bg: #0c0d0f;
+    --footer-font: #ebecf7;
+
+    --highlight: #ebecf7;
+
+    --blue: #8ab4f8;
+    
+    --image-view: #0c0d0f;
+    --image-view-titlebar: #0c0d0f;
+    --view-image-color: #000000;
+    --image-select: #303030;
+    --fff: #fff;
+
+    --search-button: #BABCBE;
+    
+    color-scheme: dark;
+}
+
+.calc-btn:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.calc-btn-2:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.calc-btn-2 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.calc-btn {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.calc {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.image {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.view-image-search {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.view-image-search:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}

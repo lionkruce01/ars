@@ -1,0 +1,48 @@
+{% extends "results_layout.html" %}
+
+{% block body %}
+    <p class="fetched fetched_dif fetched_tor">{{ lang_data.results.results }} {{ fetched }} {{ lang_data.results.seconds }}</p>
+
+    {% if results %}
+    <form action="search" class="torrent-sort">
+      <input type="hidden" name="q" value="{{ q }}">
+      <input type="hidden" name="t" value="torrent">
+      <select class="torrent-settings" name="sort">
+        <option value="seed" {% if sort == "seed" %} selected {% endif %}>Number of Seeders</option>
+        <option value="leech" {% if sort == "leech" %} selected {% endif %}>Number of Leechers</option>
+        <option value="lth" {% if sort == "lth" %} selected {% endif %}>Size (Low to High)</option>
+        <option value="htl" {% if sort == "htl" %} selected {% endif %}>Size (High to Low)</option>
+      </select>
+      <select class="torrent-cat" name="cat">
+        <option value="all" {% if cat == "all" %} selected {% endif %}>All Catagories</option>
+        <option value="movie" {% if cat == "movie" %} selected {% endif %}>Movies</option>
+        <option value="audiobook" {% if cat == "audiobook" %} selected {% endif %}>Audiobooks</option>
+        <option value="tv" {% if cat == "tv" %} selected {% endif %}>TV Shows</option>
+        <option value="games" {% if cat == "games" %} selected {% endif %}>Games</option>
+        <option value="software" {% if cat == "software" %} selected {% endif %}>Software</option>
+        <option value="anime" {% if cat == "anime" %} selected {% endif %}>Anime</option>
+        <option value="music" {% if cat == "music" %} selected {% endif %}>Music</option>
+        {% if safesearch != "active" %}
+          <option value="xxx" {% if cat == "xxx" %} selected {% endif %}>XXX (18+)</option>
+        {% endif %}
+      </select>
+      <button type="submit" class="torrent-sort-save">Submit</button>
+    </form>
+    <div class="clean">
+        {% for result in results %}
+        <div class="results">
+            <a id="link" href="{{ result['magnet'] }}">{{ result["href"] }}</a>
+            <a class="torrent" href="{{ result['magnet'] }}"><h3>{{ result["title"] }}</h3></a>
+            <p class="stats">{% if result["views"] %}{{ result["views"] }} views • {% endif %}{{ result["size"] }}</p>
+            <p class="publish__info"> Seeders: <span class="seeders">{{ result["seeders"] }}</span> <span class="pipe">|</span> Leechers: <span class="leechers">{{ result["leechers"] }}</span></p>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="{{ url_for('static', filename='torrentSort.js') }}"></script>
+    {% else %}
+        <div class="no-results-found">
+            Your search '{{ q }}' came back with no results.<br>
+            Try rephrasing your search term and/or recorrect any spelling mistakes.
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,7 @@
+flask
+lxml
+bs4
+gunicorn
+requests
+thefuzz
+langdetect
